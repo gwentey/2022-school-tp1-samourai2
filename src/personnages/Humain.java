@@ -41,7 +41,11 @@ public class Humain {
 	}
 	
 	public void direBonjour() {
-		
+		this.parler("Bonjour ! Ie Je m’appelle " + this.nom + " et j’aime boire du " + this.boisson);
+	}
+	
+	public void boire() {
+		this.parler("Mmmm, un bon verre de" + this.boisson + " GLOUPS !");
 	}
 	
 }
