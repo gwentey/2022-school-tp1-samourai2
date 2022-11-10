@@ -20,11 +20,19 @@ public class Ronin extends Humain {
 	}
 
 	public void provoquerUnDuelYakusa(Yakusa yakusa) {
-		boolean gagner = false;
-		if(gagner) {
+
+		// si l'honneur de Ronin*2 est supérieur à la réputation du Yakusa
+		if (this.honneur * 2 > yakusa.getReputation()) {
 			
-		}else {
-			
+			// prendre l'argent du yakusa
+			this.gagnerArgent(yakusa.getArgent());
+			yakusa.perdre();
+			this.honneur++;
+			this.parler("J'ai gagné au duel face à un Yakuza");
+		} else {
+			this.honneur--;
+			this.parler("J'ai perdu au duel face à un Yakuza, la vie est terrible");
+			yakusa.gagner();
 		}
 	}
 
